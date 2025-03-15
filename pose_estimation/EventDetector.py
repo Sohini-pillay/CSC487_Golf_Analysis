@@ -17,7 +17,6 @@ class EventDetector(nn.Module):
 
         # Load MobileNetV2 backbone
         net = mobilenet_v2(pretrained=True)
-
  
         self.cnn = net.features
 
