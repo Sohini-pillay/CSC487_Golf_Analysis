@@ -111,9 +111,9 @@ if __name__ == "__main__":
     # VIDEO_ID = 0
     # KEY_FRAMES_IDX = 7
 
-    video_dir = "../videos_160"
+    video_dir = os.path.abspath("videos_160")  
 
-    frames_dir = "./vid_frames"
+    frames_dir = "vid_frames"
 
     os.makedirs(frames_dir, exist_ok=True)
 
