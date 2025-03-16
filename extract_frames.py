@@ -1,7 +1,7 @@
 import os
 import math
 import matplotlib.pyplot as plt
-from moviepy import VideoFileClip
+from moviepy.editor import VideoFileClip
 from concurrent.futures import ProcessPoolExecutor
 
 def save_vid_frames(video_path, output_dir, video_id):
@@ -35,7 +35,7 @@ def process_video(video_file, video_dir, frames_dir):
 
 if __name__ == "__main__":
     video_dir = "pose_estimation/videos_160"
-    frames_dir = "./vid_frames"
+    frames_dir = "pose_estimation/vid_frames"
     os.makedirs(frames_dir, exist_ok=True)
 
     # List all mp4 files in the video directory
