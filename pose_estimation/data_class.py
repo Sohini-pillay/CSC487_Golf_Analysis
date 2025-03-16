@@ -46,10 +46,13 @@ class GolfSwingDataset(Dataset):
                 frame = cv2.imread(frame_path)
                 frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
                 images.append(frame)
-                sampled_labels.append(labels[i])
+                if i < len(labels):
+                    sampled_labels.append(labels[i])
+                else:
+                    sampled_labels.append(8)  # pad with "no-event" if label is missing
             else:
                 # Pad with empty frames and "no-event" labels if sequence exceeds total frames
-                images.append(np.zeros((160, 160, 3), dtype=np.uint8))  
+                images.append(np.zeros((160, 160, 3), dtype=np.uint8))
                 sampled_labels.append(8)  # 8 indicates "no-event"
 
         # Convert to tensors
