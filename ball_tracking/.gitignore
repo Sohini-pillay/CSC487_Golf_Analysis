@@ -1,0 +1,5 @@
+/test
+/train
+/valid
+best_golfball_cnn.pth
+golfball_labels.csv
